@@ -8,9 +8,12 @@ You're welcome to use Internet resources in solving these problems, as long as
 they don't give you a complete solution, and you obviously can't ask people
 (online or in person) for help. Please cite every resource that you used.
 
-In order to test your solution you'll need to have PostgreSQL and Linux
-installed. If you're not running these on your computer already, using Docker is
-a great way to quickly spin these up.
+You're also welcome to use or setup whatever test environment you're most
+comfortable with. If you don't have one setup already you can use Docker to spin
+up a test environment quickly on your local machine. The problems below list
+commands you can run to set this up. They assume that your scripts for these
+problems are stored inside the current directory. Feel free to deviate from the
+suggestions as needed.
 
 The thought that goes into this is more important than achieving perfection, so
 don't worry about making sure it's 100% bug free (though it certainly should be
@@ -53,6 +56,29 @@ aggregation function to come up with a comma-separated list. Instead, handle
 consolidation of multiple values into a single comma-separated line within bash
 (and any standard \*nix tools you'd like to use, of course).
 
+### Docker commands for setting up test environment
+
+PostgreSQL server:
+
+```bash
+docker container run --rm --name postgres_test_server postgres
+```
+
+PostgreSQL client:
+
+```bash
+pg_server_ip="$(docker container inspect -f '{{ .NetworkSettings.IPAddress }}' postgres_test_server)"
+
+docker container run \
+  -it --rm \
+  --add-host "pg-server:$pg_server_ip" \
+  -v "$(pwd):/opt/devops-screener" \
+  postgres bash
+```
+
+Once inside the PostgreSQL client container you can connect to the Postgres
+server by connecting to the host `pg-server`.
+
 
 ## Problem #2: Processes with top disk reads
 
@@ -88,4 +114,13 @@ PID     Bytes read
 19551   16384
 1       0
 2       0
+```
+
+### Docker command for setting up test environment
+
+```bash
+docker container run \
+  -it --rm \
+  -v "$(pwd):/opt/devops-screener" \
+  python:3-stretch bash
 ```
