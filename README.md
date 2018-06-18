@@ -1,8 +1,8 @@
 # Oseberg DevOps Screener
 
-Please complete the following and submit source code and output to the person
-that sent you this screener. Please also track and state with how much time you
-spent on each assignment.
+Please complete the following and submit source code and output to us via the
+Greenhouse link that you were provided with. Please also track and state with
+how much time you spent on each assignment.
 
 You're welcome to use Internet resources in solving these problems, as long as
 they don't give you a complete solution, and you obviously can't ask people
@@ -16,9 +16,10 @@ The thought that goes into this is more important than achieving perfection, so
 don't worry about making sure it's 100% bug free (though it certainly should be
 tested adequately). We prefer simple solutions. The goal is not for you to spend
 a lot of time on these problems. If it turns out to be very time-consuming
-please talk to me.
+please talk to Alex before proceeding to ensure that what you're doing lines up
+with Oseberg's expectations.
 
-Please reach out to me if you have any questions about this or would like to
+Please reach out to Alex if you have any questions about this or would like to
 seek clarification.
 
 The interview team will use this assignment to determine if you may be a
