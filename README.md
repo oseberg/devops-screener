@@ -31,10 +31,10 @@ suitable candidate for the position.
 
 ## Problem #1: PostgreSQL info retriever
 
-You have two servers, one running a Postgres database. You do not have SSH
-access to the server that hosts the Postgres database. From the machine *not*
-running the Postgres instance write a bash script that connects to the database
-and displays the following output derived from that database:
+You have two VMs, one running a Postgres database, and one with a Postgres
+client. You do not have SSH access to the VM that hosts the Postgres database.
+Write a bash script that connects from the Postgres client VM to the Postgres
+database and displays the following output derived from that database:
 
 ```
 Number of non-idle database connections: ___
